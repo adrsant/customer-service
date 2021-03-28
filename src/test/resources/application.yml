@@ -1,0 +1,36 @@
+application:
+  name: customer-service
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DB_CONTAINER_URL}
+    username: ${DB_CONTAINER_USERNAME}
+    password: ${DB_CONTAINER_PASSWORD}
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  flyway:
+    enabled: true
+    password: ${DB_CONTAINER_PASSWORD}
+    url: ${DB_CONTAINER_URL}
+    user: ${DB_CONTAINER_USERNAME}
+
+integration:
+  product-api:
+    endpoint: http://localhost:${WIREMOCK_PORT:8085}/luizalabs
+
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      product-api:
+        readTimeout: 500
+        connectTimeout: 200
+

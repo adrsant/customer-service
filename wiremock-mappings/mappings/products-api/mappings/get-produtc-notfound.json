@@ -1,0 +1,14 @@
+{
+  "priority": 2,
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/luizalabs/api/product/5d0eb672-77ab-4b94-b5a7-b1e7d63af239/"
+  },
+  "response": {
+    "status": 404,
+    "body": "404: Not Found"
+  }
+}
+
+
+

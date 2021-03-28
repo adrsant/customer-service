@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  database:
+    container_name: postgres_customer-service
+    image: postgres:11.2
+    environment:
+      POSTGRES_DB: customer
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /data/postgres
+    volumes:
+      - ./tmp/postgres:/data/postgres
+    ports:
+      - "5432:5432"
+  swagger-ui:
+    image: swaggerapi/swagger-ui
+    container_name: swagger-ui
+    ports:
+      - "8082:8080"
+    environment:
+      URL: http://localhost:8080/v2/api-docs
