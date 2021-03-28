@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
     url = "${integration.product-api.endpoint}",
     fallbackFactory = ProductEaiClientFallbackFactory.class,
     configuration = OpenFeignConfig.class)
-@Transactional(propagation = Propagation.NOT_SUPPORTED)
+@Transactional(propagation = Propagation.NEVER)
 public interface ProductEaiClient {
 
   @GetMapping(value = "/api/product/{productId}/")

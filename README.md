@@ -33,8 +33,8 @@ favoritos.
    - Maven;
    - Docker e compose;
 
-2. Inicializar as dependências do projeto, na pasta raiz do projeto executar o comando : `make start-environment:`
-   _por padrão, o acesso ao banco `customer` é feito com a senha `postgres` e usuário `postgres`_
+2. Inicializar as dependências do projeto, na pasta raiz do projeto executar o comando `make start-environment:`
+   >Por padrão, o acesso ao banco `customer` é feito com a senha `postgres` e usuário `postgres`_
 
 | Serviço    |    Endpoint    |
 |------------|:--------------:|
@@ -52,7 +52,7 @@ favoritos.
 
 | Ambiente           |                Endpoint               |  Timeouts(C/R)  |
 |--------------------|:-------------------------------------:|----------------:|
-| Api de produtos    | http://challenge-api.luizalabs.com    |    500/1500    |
+| Api de produtos    | http://challenge-api.luizalabs.com    |    500/1500     |
 
 #### Api utilizadas:
 
@@ -63,9 +63,9 @@ favoritos.
 
 ## Documentações adicionais
 
-- [Requesitos funcionais](http://localhost:8082/)
+- [Requesitos funcionais](./docs/functional_requirement.md)
 - [Documentação de API](http://localhost:8082/)
-- [Teste de carga ](http://localhost:8082/)
+- [Teste de carga ](./docs/load_test.md)
 
 ## Pendências
 - [ ] Aplicar segurançã na api;
