@@ -106,6 +106,22 @@ public class ProductFavoriteITest extends ContextTestMockAll {
 
   @Test
   @Sql(scripts = "classpath:test-data/create-favorites.sql")
+  public void shouldDoNotAddProductFavoriteBecauseIsDuplicated() throws Exception {
+    var command =
+        AddFavoriteCommand.builder()
+            .productId(UUID.fromString("1bf0f365-fbdd-4e21-9786-da459d78dd1f"))
+            .customerId(UUID.fromString("6fc1307c-5100-4b6b-b3a0-d4c6cfb35c11"))
+            .build();
+    mockMvc
+        .perform(
+            post(CONTEXT_ROOT + "{productId}/", command.getCustomerId(), command.getProductId()))
+        .andExpect(status().isUnprocessableEntity())
+        .andExpect(jsonPath("$.errors.[0]").value("The product has been in favorite list."))
+        .andReturn();
+  }
+
+  @Test
+  @Sql(scripts = "classpath:test-data/create-favorites.sql")
   public void shouldRemoveProductFavorite() throws Exception {
     var command =
         RemoveFavoriteCommand.builder()
