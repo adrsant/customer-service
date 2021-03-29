@@ -20,6 +20,7 @@
     <testcontainers.version>1.15.2</testcontainers.version>
     <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
     <springfox-swagger.version>2.9.2</springfox-swagger.version>
+    <security-jwt.version>0.9.1</security-jwt.version>
     <jacoco.version>0.8.5</jacoco.version>
     <plugin.coveo-formatter.version>2.9</plugin.coveo-formatter.version>
     <plugin.jacoco.coverage.dist>jacoco/coverage</plugin.jacoco.coverage.dist>
@@ -58,17 +59,22 @@
         </exclusion>
       </exclusions>
     </dependency>
-<!--    <dependency>-->
-<!--      <groupId>org.springframework.boot</groupId>-->
-<!--      <artifactId>spring-boot-starter-security</artifactId>-->
-<!--    </dependency>-->
-<!--    <dependency>-->
-<!--      <groupId>io.jsonwebtoken</groupId>-->
-<!--      <artifactId>jjwt</artifactId>-->
-<!--      <version>0.9.1</version>-->
-<!--    </dependency>-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt</artifactId>
+      <version>${security-jwt.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-test</artifactId>
+      <scope>test</scope>
+    </dependency>
 
-<!--    <dependency>-->
+    <!--    <dependency>-->
     <!--      <groupId>com.arhs-group</groupId>-->
     <!--      <artifactId>spring-cache-mongodb</artifactId>-->
     <!--      <version>1.0.1</version>-->

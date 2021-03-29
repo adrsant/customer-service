@@ -19,10 +19,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.web.servlet.MockMvc;
 
 @AutoConfigureMockMvc
+@WithMockUser(value = "mock", authorities = "WRITE_PRIVILEGE")
 public class ProductFavoriteITest extends ContextTestMockAll {
 
   private static final String CONTEXT_ROOT = "/api/customer/{customerId}/favorite/";

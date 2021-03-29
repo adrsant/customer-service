@@ -36,23 +36,50 @@ favoritos.
 2. Inicializar as dependências do projeto, na pasta raiz do projeto executar o comando `make start-environment:`
    >Por padrão, o acesso ao banco `customer` é feito com a senha `postgres` e usuário `postgres`_
 
+
 | Serviço    |    Endpoint    |
 |------------|:--------------:|
 | Postgres   | localhost:5432 |
 | swagger-ui | localhost:8082 |
 
+
 3. Inicialização do projeto :
    - Por CLI, na pasta do projeto rodar o comando `make start-project`
    - por IDE, só executar a classe `Application`:</br>
-   
-   
-## Integração HTTP
 
-####  Configuração de endpoint:
+## Como utilizar as api's
 
-| Ambiente           |                Endpoint               |  Timeouts(C/R)  |
+1. Após a inicialização do projeto, devemoos obter o 
+   token de acesso usando a api `/api/autheticate` passando o payload abaixo:
+   
+- Acceso completo:
+   
+```json
+{
+    "username": "user-api",
+    "password": "password"
+}
+```
+
+- Acceso restrito a apis de leitura:
+
+```json
+{
+    "username": "user-api",
+    "password": "password"
+}
+```
+
+2. O processo de autenticação utiliza token JWT, sendo enviado por `Bearer Token` sendo assim, 
+   fica obrigatório o envio em todas chamdas de apis o header `Authorization: Bearer <TOKEN-JWT>`.
+   
+
+##  Dependências:
+
+|     Projeto        |                Endpoint               |  Timeouts(C/R)  |
 |--------------------|:-------------------------------------:|----------------:|
 | Api de produtos    | http://challenge-api.luizalabs.com    |    500/1500     |
+
 
 #### Api utilizadas:
 
@@ -62,14 +89,14 @@ favoritos.
 
 
 ## Documentações adicionais
-
 - [Requesitos funcionais](./docs/functional_requirement.md)
 - [Documentação de API](http://localhost:8082/)
 - [Teste de carga ](./docs/load_test.md)
 
 ## Pendências
-- [ ] Aplicar segurançã na api;
 - [ ] Adicionar cache na consulta de produto;
 - [ ] Criar teste de carga.
 
+## Observações
+-  O códio de segurança foi implementado com base no [exemplo](https://www.javainuse.com/spring/boot-jwt) 
 

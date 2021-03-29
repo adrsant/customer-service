@@ -31,6 +31,17 @@ feign:
   client:
     config:
       product-api:
-        readTimeout: 500
+        readTimeout: 200
         connectTimeout: 200
 
+security:
+  jwt-secret: luizalabs-token
+  users:
+    - username: user-api
+      password: $2a$10$slYQmyNdGzTn7ZLBXBChFOC9f6kFjAqPhccnP6DxlWXx2lPk1C3G6 #password
+      authorities:
+        - WRITE_PRIVILEGE
+    - username: user-reader
+      password: $2a$10$slYQmyNdGzTn7ZLBXBChFOC9f6kFjAqPhccnP6DxlWXx2lPk1C3G6 #password
+      authorities:
+        - READ_PRIVILEGEssss
