@@ -1,8 +1,8 @@
 
 ####  Requesitos funcionais:
 
-|   ID   |     Descrição                                  |              API                |                         Status                            |                    Teste                           |
-|--------|:----------------------------------------------:|--------------------------------:|----------------------------------------------------------:|---------------------------------------------------:|
+|   ID    |     Descrição                                  |              API                |                         Status                            |                                           Teste                                           |
+|---------|:----------------------------------------------:|--------------------------------:|----------------------------------------------------------:|------------------------------------------------------------------------------------------:|
 |  RF-01  | Criar cliente com (id,email,nome)                                               |  POST /api/customer/                                      |  Atendido  | `CustomerITest.shouldCreateCustomer()`                                        |
 |  RF-02  | Atualizar cliente                                                               |  PUT  /api/customer/                                      |  Atendido  | `CustomerITest.shouldUpdateCustomer()`                                        |
 |  RF-03  | Remover cliente                                                                 |  DELETE  /api/customer//{customerId}/                     |  Atendido  | `CustomerITest.shouldRemovalCustomer()`                                       |
@@ -13,8 +13,8 @@
 |  RF-08  | Obter a lista de favoritos  do cliente (paginada)                               |   GET /api/customer/{customerId}/favorite/                |  Atendido  | `ProductFavoriteITest.shouldListFavorites()`                                  |
 |  RF-09  | Um produto não pode ser adicionado em uma lista caso ele não exista             |                                                           |  Atendido  | `ProductFavoriteITest.shouldDoNotAddProductFavoriteBecauseNotExistsProduct()` |
 |  RF-10  | Um produto não pode ser adicionado duas vezes na lista de favoritos do cliente  |                                                           |  Atendido  | `ProductFavoriteITest.shouldDoNotAddProductFavoriteBecauseIsDuplicated()`     | 
-|  RF-11  | Autenticar usuário para acesso a api                                            |                                                           |            |                                                                               |
-|  RF-12  | Autorizar usuário para acesso a api                                             |                                                           |            |                                                                               |
+|  RF-11  | Autenticar usuário para acesso a api                                            |                                                           |  Atendido  |                                                                               |
+|  RF-12  | Autorizar usuário para acesso a api                                             |                                                           |  Atendido  |                                                                               |
 
 
 ####  Requesitos não funcionais:

@@ -21,6 +21,10 @@ spring:
     url: ${DB_CONTAINER_URL}
     user: ${DB_CONTAINER_USERNAME}
 
+cache:
+  expire: 5 #minutes
+  maximum-size: 3000
+
 integration:
   product-api:
     endpoint: http://localhost:${WIREMOCK_PORT:8085}/luizalabs

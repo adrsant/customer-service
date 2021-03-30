@@ -17,6 +17,9 @@ spring:
       format_sql: false
       naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
       show_sql: false
+cache:
+  expire: 5 #minutes
+  maximum-size: 3000
 
 integration:
   product-api:
@@ -42,3 +45,4 @@ security:
       password: $2a$10$slYQmyNdGzTn7ZLBXBChFOC9f6kFjAqPhccnP6DxlWXx2lPk1C3G6 #password
       authorities:
         - READ_PRIVILEGE
+

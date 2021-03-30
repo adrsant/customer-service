@@ -76,9 +76,9 @@ favoritos.
 
 ##  Dependências:
 
-|     Projeto        |                Endpoint               |  Timeouts(C/R)  |
-|--------------------|:-------------------------------------:|----------------:|
-| Api de produtos    | http://challenge-api.luizalabs.com    |    500/1500     |
+|     Projeto        |                Endpoint               |  Timeouts(C/R)  |              Cache                     |
+|--------------------|:-------------------------------------:|----------------:|---------------------------------------:|
+| Api de produtos    | http://challenge-api.luizalabs.com    |    500/1500     | Cache de resposta(OK) com TTL de 5min  |
 
 
 #### Api utilizadas:
