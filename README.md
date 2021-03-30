@@ -20,12 +20,12 @@ favoritos.
 
 |            Pacote                           |                 Descrição                         |
 |---------------------------------------------|:-------------------------------------------------:|
-|  com.contaazul.api                          |  Apis expostas pelo projeto                       |
-|  com.contaazul.infrastructure.eai           |  Integração http, nunca pode ter transação        |
-|  com.contaazul.infrastructure.configuration |  Configuração do projeto aplicadas por java       |
-|  com.contaazul.interactions                 |  Caso de uso atendido pelo projeto                |
-|  com.contaazul.entity                       |  Entidades mapeadas no projeto                    |
-|  com.contaazul.repository                   |  Repositórios relacionados as entidades           |
+|  com.luizalabs.api                          |  Apis expostas pelo projeto                       |
+|  com.luizalabs.infrastructure.eai           |  Integração http, nunca pode ter transação        |
+|  com.luizalabs.infrastructure.configuration |  Configuração do projeto aplicadas por java       |
+|  com.luizalabs.interactions                 |  Caso de uso atendido pelo projeto                |
+|  com.luizalabs.entity                       |  Entidades mapeadas no projeto                    |
+|  com.luizalabs.repository                   |  Repositórios relacionados as entidades           |
 
 ## Como configurar o ambiente de desenvolvimento
 
