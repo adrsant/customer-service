@@ -11,6 +11,7 @@ favoritos.
 - Spring Boot 2.3.8
 - Postgres
 - Flyway
+- Cache Caffeine
 - Wiremock
 - Swagger
 
@@ -94,9 +95,9 @@ favoritos.
 - [Teste de carga ](./docs/load_test.md)
 
 ## Pendências
-- [ ] Adicionar cache na consulta de produto;
 - [ ] Criar teste de carga.
 
 ## Observações
 -  O códio de segurança foi implementado com base no [exemplo](https://www.javainuse.com/spring/boot-jwt) 
-
+- O Cache está em memória por ser tratar de um projeto com uma JVM,
+  caso contrário deve ser considerado o uso de cache distribuído. 
