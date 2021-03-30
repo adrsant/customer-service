@@ -55,7 +55,7 @@ favoritos.
 1. Após a inicialização do projeto, devemoos obter o 
    token de acesso usando a api `/api/autheticate` passando o payload abaixo:
    
-- Acceso completo:
+- Acesso completo:
    
 ```json
 {
@@ -64,7 +64,7 @@ favoritos.
 }
 ```
 
-- Acceso restrito a apis de leitura:
+- Acesso restrito a apis de leitura:
 
 ```json
 {
