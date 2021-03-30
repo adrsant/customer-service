@@ -48,6 +48,6 @@ class ExistCustomerListValidationTest {
 
     throwableAssert
         .isInstanceOf(ResourceNotFoundException.class)
-        .hasMessage("The client not exists");
+        .hasMessage("Não foi encontrado o cliente.");
   }
 }

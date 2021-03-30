@@ -43,6 +43,6 @@ class CanUpdateMailValidationTest {
 
     throwableAssert
         .isInstanceOf(ResourceDuplicatedException.class)
-        .hasMessage("The email has already been used by another customer");
+        .hasMessage("O email já está sendo utilizado.");
   }
 }

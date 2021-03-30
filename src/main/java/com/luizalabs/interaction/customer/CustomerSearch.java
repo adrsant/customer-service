@@ -23,7 +23,7 @@ public class CustomerSearch {
   public CustomerResponse get(@Valid @NotNull UUID id) {
     return repository
         .findById(id)
-        .orElseThrow(() -> new ResourceNotFoundException("Customer not found with id " + id))
+        .orElseThrow(() -> new ResourceNotFoundException("Não foi encontrado o cliente."))
         .toResponse();
   }
 

@@ -18,7 +18,7 @@ class CanUpdateMailValidation implements ValidationBeforeInteraction<UpdateClien
     boolean exists = repository.existsByMailAndIdNot(command.getMail(), command.getId());
 
     if (exists) {
-      throw new ResourceDuplicatedException("The email has already been used by another customer");
+      throw new ResourceDuplicatedException("O email já está sendo utilizado.");
     }
   }
 }

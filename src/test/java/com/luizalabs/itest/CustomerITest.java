@@ -64,8 +64,7 @@ class CustomerITest extends ContextTestMockDatabase {
         .perform(post(CONTEXT_ROOT).contentType(MediaType.APPLICATION_JSON).content(json))
         .andExpect(status().isUnprocessableEntity())
         .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-        .andExpect(
-            jsonPath("$.errors.[0]").value("The email has already been used by another customer"))
+        .andExpect(jsonPath("$.errors.[0]").value("O email já está sendo utilizado."))
         .andReturn();
   }
 
@@ -109,8 +108,7 @@ class CustomerITest extends ContextTestMockDatabase {
         .perform(put(CONTEXT_ROOT).contentType(MediaType.APPLICATION_JSON).content(json))
         .andExpect(content().contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isUnprocessableEntity())
-        .andExpect(
-            jsonPath("$.errors.[0]").value("The email has already been used by another customer"))
+        .andExpect(jsonPath("$.errors.[0]").value("O email já está sendo utilizado."))
         .andReturn();
 
     assertThat(repository.existsByMail(command.getMail())).isTrue();
@@ -132,9 +130,7 @@ class CustomerITest extends ContextTestMockDatabase {
         .perform(put(CONTEXT_ROOT).contentType(MediaType.APPLICATION_JSON).content(json))
         .andExpect(content().contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isNotFound())
-        .andExpect(
-            jsonPath("$.errors.[0]")
-                .value("Customer not found with id 6fc1307c-5100-4b6b-b3a0-d4c6cfb35c11"))
+        .andExpect(jsonPath("$.errors.[0]").value("Não foi encontrado o cliente."))
         .andReturn();
   }
 
@@ -164,7 +160,7 @@ class CustomerITest extends ContextTestMockDatabase {
             MockMvcRequestBuilders.delete(CONTEXT_ROOT + "{customerId}/", command.getCustomerId()))
         .andExpect(status().isNotFound())
         .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-        .andExpect(jsonPath("$.errors.[0]").value("The customer not exists."))
+        .andExpect(jsonPath("$.errors.[0]").value("Não foi encontrado o cliente."))
         .andReturn();
   }
 
@@ -192,9 +188,7 @@ class CustomerITest extends ContextTestMockDatabase {
         .perform(get(CONTEXT_ROOT + "{customerId}/", uuid))
         .andExpect(content().contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isNotFound())
-        .andExpect(
-            jsonPath("$.errors.[0]")
-                .value("Customer not found with id 6fc1307c-5100-4b6b-b3a0-d4c6cfb35c11"))
+        .andExpect(jsonPath("$.errors.[0]").value("Não foi encontrado o cliente."))
         .andReturn();
   }
 

@@ -60,6 +60,6 @@ class NotExistFavoriteProductValidationTest {
 
     throwableAssert
         .isInstanceOf(ResourceDuplicatedException.class)
-        .hasMessage("The product has been in favorite list.");
+        .hasMessage("O produto já está na lista de favoritos.");
   }
 }

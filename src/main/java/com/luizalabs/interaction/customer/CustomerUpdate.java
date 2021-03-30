@@ -29,9 +29,7 @@ public class CustomerUpdate {
     var customer =
         repository
             .findById(command.getId())
-            .orElseThrow(
-                () ->
-                    new ResourceNotFoundException("Customer not found with id " + command.getId()));
+            .orElseThrow(() -> new ResourceNotFoundException("Não foi encontrado o cliente."));
 
     customer.updateInfo(command.getName(), command.getMail());
 

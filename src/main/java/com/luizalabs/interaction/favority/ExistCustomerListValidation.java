@@ -18,7 +18,7 @@ class ExistCustomerListValidation implements ValidationBeforeInteraction<AddFavo
     boolean exists = repository.existsById(command.getCustomerId());
 
     if (!exists) {
-      throw new ResourceNotFoundException("The client not exists");
+      throw new ResourceNotFoundException("Não foi encontrado o cliente.");
     }
   }
 }

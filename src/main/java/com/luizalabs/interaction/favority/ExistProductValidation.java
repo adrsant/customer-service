@@ -29,7 +29,7 @@ class ExistProductValidation implements ValidationBeforeInteraction<AddFavoriteC
     var responseEntity = productEaiClient.getProduct(command.getProductId());
 
     if (HttpStatus.OK != responseEntity.getStatusCode()) {
-      throw new ResourceNotFoundException("The product not exists");
+      throw new ResourceNotFoundException("Não foi encontrado o produto.");
     }
 
     cache.put(command.getProductId(), true);

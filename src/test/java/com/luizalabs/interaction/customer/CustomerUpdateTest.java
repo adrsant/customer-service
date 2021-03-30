@@ -59,7 +59,7 @@ class CustomerUpdateTest {
 
     assertThatThrownBy(() -> interaction.update(command))
         .isInstanceOf(ResourceNotFoundException.class)
-        .hasMessage("Customer not found with id " + command.getId());
+        .hasMessage("Não foi encontrado o cliente.");
 
     then(entityCreated).should(never()).updateInfo(command.getName(), command.getMail());
     then(repository).should(never()).save(entityCreated);

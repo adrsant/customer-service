@@ -1,6 +1,8 @@
 application:
   name: customer-service
 spring:
+  profiles:
+    active: test
   datasource:
     driver-class-name: org.postgresql.Driver
     url: ${DB_CONTAINER_URL}

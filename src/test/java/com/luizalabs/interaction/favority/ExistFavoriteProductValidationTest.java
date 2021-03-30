@@ -61,6 +61,6 @@ class ExistFavoriteProductValidationTest {
 
     throwableAssert
         .isInstanceOf(ResourceNotFoundException.class)
-        .hasMessage("The favorite product not found.");
+        .hasMessage("Não foi encontrado o produto favorito.");
   }
 }

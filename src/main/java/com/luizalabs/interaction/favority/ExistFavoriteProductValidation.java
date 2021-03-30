@@ -25,7 +25,7 @@ class ExistFavoriteProductValidation implements ValidationBeforeInteraction<Remo
     boolean exists = repository.existsById(pk);
 
     if (!exists) {
-      throw new ResourceNotFoundException("The favorite product not found.");
+      throw new ResourceNotFoundException("Não foi encontrado o produto favorito.");
     }
   }
 }

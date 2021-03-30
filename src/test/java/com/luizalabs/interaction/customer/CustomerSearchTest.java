@@ -49,7 +49,7 @@ class CustomerSearchTest {
 
     assertThatThrownBy(() -> interaction.get(customerId))
         .isInstanceOf(ResourceNotFoundException.class)
-        .hasMessage("Customer not found with id " + customerId);
+        .hasMessage("Não foi encontrado o cliente.");
   }
 
   @Test

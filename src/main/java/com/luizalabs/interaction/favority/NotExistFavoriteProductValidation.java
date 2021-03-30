@@ -25,7 +25,7 @@ class NotExistFavoriteProductValidation implements ValidationBeforeInteraction<A
     boolean exists = repository.existsById(pk);
 
     if (exists) {
-      throw new ResourceDuplicatedException("The product has been in favorite list.");
+      throw new ResourceDuplicatedException("O produto já está na lista de favoritos.");
     }
   }
 }

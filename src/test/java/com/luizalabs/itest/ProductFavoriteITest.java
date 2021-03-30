@@ -81,7 +81,7 @@ public class ProductFavoriteITest extends ContextTestMockAll {
         .perform(
             post(CONTEXT_ROOT + "{productId}/", command.getCustomerId(), command.getProductId()))
         .andExpect(status().isNotFound())
-        .andExpect(jsonPath("$.errors.[0]").value("The product not exists"))
+        .andExpect(jsonPath("$.errors.[0]").value("Não foi encontrado o produto."))
         .andReturn();
 
     assertThat(repository.count()).isEqualTo(0);
@@ -100,7 +100,7 @@ public class ProductFavoriteITest extends ContextTestMockAll {
         .perform(
             post(CONTEXT_ROOT + "{productId}/", command.getCustomerId(), command.getProductId()))
         .andExpect(status().isNotFound())
-        .andExpect(jsonPath("$.errors.[0]").value("The client not exists"))
+        .andExpect(jsonPath("$.errors.[0]").value("Não foi encontrado o cliente."))
         .andReturn();
 
     assertThat(repository.count()).isEqualTo(0);
@@ -118,7 +118,7 @@ public class ProductFavoriteITest extends ContextTestMockAll {
         .perform(
             post(CONTEXT_ROOT + "{productId}/", command.getCustomerId(), command.getProductId()))
         .andExpect(status().isUnprocessableEntity())
-        .andExpect(jsonPath("$.errors.[0]").value("The product has been in favorite list."))
+        .andExpect(jsonPath("$.errors.[0]").value("O produto já está na lista de favoritos."))
         .andReturn();
   }
 

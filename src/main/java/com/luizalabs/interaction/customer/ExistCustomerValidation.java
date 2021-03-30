@@ -18,7 +18,7 @@ class ExistCustomerValidation implements ValidationBeforeInteraction<RemoveCusto
     boolean exists = repository.existsById(command.getCustomerId());
 
     if (!exists) {
-      throw new ResourceNotFoundException("The customer not exists.");
+      throw new ResourceNotFoundException("Não foi encontrado o cliente.");
     }
   }
 }

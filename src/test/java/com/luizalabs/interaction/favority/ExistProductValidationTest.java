@@ -84,7 +84,7 @@ class ExistProductValidationTest {
 
     throwableAssert
         .isInstanceOf(ResourceNotFoundException.class)
-        .hasMessage("The product not exists");
+        .hasMessage("Não foi encontrado o produto.");
     then(cache).should(never()).put(command.getProductId(), true);
   }
 }
